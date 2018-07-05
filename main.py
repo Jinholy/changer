@@ -1,5 +1,6 @@
 import glob
 import options as ops
+import xls_handler as xh
 
 
 class data:
@@ -14,12 +15,26 @@ class data:
 
 data_list = list()
 
-data_list.append(data(1, 2, 3, 4, 5, 6))
+# print(xh.get_data_by_key(1))  #1번은 attribute name이 나옴 2번부터 진짜 data임
 
-print(data_list.pop())
+i = 2
+while True:
+    tmp_list = xh.get_data_by_key(i)
+    print(tmp_list[0])
+    if tmp_list[0] == None:
+        break
+    else:
+        data_list.append(data(i - 1, ops.region, tmp_list[0], tmp_list[1], tmp_list[2], (i - 1) % 3))
+        i = i+1
+
+
+
+for d in data_list:
+    print(d.num, d.region, d.city, d.year, d.magnitude, d.file_order)
+
 
 fpath = ops.fpath
 f_list = glob.glob(fpath)
 
-#result = '\n'.join(f_list)
-#print(result)
+# result = '\n'.join(f_list)
+# print(result)

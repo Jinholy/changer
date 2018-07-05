@@ -2,6 +2,7 @@ separator = "_"
 fpath = "C:\\Users\\hnsle\\Desktop\\university\\earthquake\\data\\AT\\NA_AT\\*.AT2"
 order = {1, 2, 3, 4, 5, 6}
 xls_file = "reference.xlsx"
+region = "NA"
 
 # 1 : num
 # 2 : region
